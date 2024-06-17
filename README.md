@@ -1,2 +1,2 @@
 # grinding-with-ross
-React-Astro frontend for grindingwithross.com
+Next.JS frontend for grindingwithross.com
