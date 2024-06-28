@@ -1,4 +1,20 @@
-export default function BlogPost({ params }: { params: { blogPost: string } }) {
+import { Metadata } from "next";
+
+type Props = {
+  params: {
+    blogPost: string;
+    blogDescription: string;
+  }
+}
+
+export const generateMetadata = ({ params }: Props): Metadata => {
+  return {
+    title: `Blog: ${params.blogPost}`,
+    // description: params.blogDescription
+  }
+}
+
+export default function BlogPost({ params }: Props) {
   return (
     <h1>Blog Title { params.blogPost }</h1>
   )
