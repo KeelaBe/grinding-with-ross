@@ -14,6 +14,8 @@ export const generateMetadata = ({ params }: Props): Metadata => {
   }
 }
 
+export const generateStaticParams() = 
+
 export default function BlogPost({ params }: Props) {
   return (
     <h1>Blog Title { params.blogPost }</h1>
