@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+const posts = await getCollection("blog");
+const post = posts.find((p: { slug: string | undefined; }) => p.slug === Astro.params.slug);
+
+if (!post) {
+  throw new Error("Post not found");
+}
+---
+
+<BlogLayout title={post.data.title} date={post.data.date}>
+  <img src={post.data.image} alt={post.data.title} />
+  <p>Published on {post.data.date.toDateString()}</p>
+  <post.Content>{post.body}</post.Content>
+</BlogLayout>
