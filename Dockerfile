@@ -11,8 +11,9 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
-# Build the Astro project
-RUN npm run astro build
+# Expose port 4321 for Astro's default dev server
+EXPOSE 4321
 
 # Output the build artifacts
-CMD ["cp", "-r", "/app/dist", "/output"]
+CMD ["npm", "run", "dev"]
+# CMD ["cp", "-r", "/app/dist", "/output"]
